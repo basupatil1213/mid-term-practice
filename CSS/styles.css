@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("../Images/bg-img.png") ;
+    background-size: cover;
+}
+/* Common CSS */
+a{
+    text-decoration: none;
+    
+    /* font-family: 'Poppins', sans-serif; */
+    font-weight: bold;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Space Grotesk', sans-serif; 
+    font-size: large;
+}
+
+
+.clickable-items:hover{
+    cursor: pointer;
+}
+
+/* Particular CSS */
+
+.header{
+    /* background-color: #fff; */
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vh 2vw;
+}
+
+.header__logo-section{
+    width: .33fr;
+}
+
+.header__logo-section__achor__logo{
+    width: 80%;
+}
+
+.header__nav-section__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4vw;
+}
+
+.header__buttons-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__buttons-section-btn{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    /* font-family: 'Playpen Sans', cursive; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+.highlight-btn{
+    background-color: #fff;
+    width: 20em;
+    padding: 5%;
+    color: black;
+    
+}
+
+.highlight--body-btn{
+    background-color: #fff;
+    width: 12em;
+    padding: 3% 1%;
+    color: black;
+    margin-top: 3%;
+    border: none;
+}
+.header__nav-section__nav__link{
+    color: #fff;
+}
+
+
+/* content body */
+
+.main{
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__left-body{
+    padding-left: 2%;
+}
+
+.main__left-body-section__para{
+    color: #fff;
+    margin-bottom: 2%;
+}
+
+#first-para{
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#second-para{
+    max-width: 8em;
+    font-size: 72px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1000;
+}
+
+#third-para{
+    max-width: 22em;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main__right-body{
+    padding-right: 10vw;
+}
+.main__right-body__display-img{
+    max-width: 44vw;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-34%);
+    }
+    50%{
+        transform: translateY(-68%);
+    }
+    75%{
+        transform: translateY(-34%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+
+.test-class{
+    /* height: 60vh; */
+    /* width: 80vw; */
+    height: 400px;
+    overflow: hidden;
+}
+/* Apply the animation to an element */
+.scrolling-element {
+    background-color: #3498db;
+    animation: scroll 5s  alternate;
+}
+
+/* actions */
+
+@keyframes effect {
+    0% {
+        background: linear-gradient(
+                #ffffff, #ef9999);
+        -webkit-background-clip: text;
+    }
+    50%{
+        background: linear-gradient(
+                #ef9999, #ec3131);
+        -webkit-background-clip: text;
+    }
+    100% {
+        background: linear-gradient(
+                #ec3131, #f10000);
+        -webkit-background-clip: text;
+    }
+}
+
+.header__nav-section__nav__link:hover{
+    color: transparent;
+    /* animation: effect 0.3s linear; */
+    background: linear-gradient(
+        #ec0404, #c079c7);
+    background-clip: text;
+    -webkit-background-clip: text;
+}

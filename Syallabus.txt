@@ -1,0 +1,78 @@
+Lecture 1: Introduction to HTTP, Unix shell, Git
+
+Lecture 2: HTML Basics- Document Metadata, Content Sectioning, Text Content, Image, Forms, & Table
+
+Lecture 3: CSS - Basics, Selectors, values & units, cascade & inheritance, box model
+
+Lecture 4: CSS  Position, Grid Layout, and SCSS
+
+Lecture 5: Introduction to Javascript 
+
+Lecture 6: DOM, Event Handling and XHRequest
+
+Lecture 7: Promise, RegExp, & Web Components
+
+1. HTTP
+    a. HTTP protocol
+    b. Advantages
+    c. Disadvantages
+2. Git
+    a. git initialization
+    b. git commands
+    c. git setup
+3. Unix shell
+4. HTML
+    a. tags
+    b. attributes
+    c. header data (Metadata)
+    d. HTML tree
+    e. Forms
+    f. Images
+    g. Table
+    h. Content
+5. CSS
+    a. Selectors
+    b. values and units
+    c. universal Selectors
+    d. !important
+    e. Box model
+    f. cascade and inheritance
+    g. hierarchy
+    h. css overriding
+    i BEM convetion
+6. SCSS
+    a. variables
+    b. mixins
+    c. loops
+    d. extends (inheritance)
+    e. nested css
+    f. Interpolation
+    g. rules -> https://sass-lang.com/documentation/at-rules/
+    h. values -> https://sass-lang.com/documentation/values/
+7. JavaScript
+    a. data types
+    b. let const and var
+    c. class components and Funtional components
+    d. loops
+    e. flow of program
+    f. hoisting
+    g. conditional loops
+    h. JSON
+8. DOM
+    a. DOM explanation
+    b. DOM tree
+9. Event Handling
+10. XHRequest
+11. Promise
+12. Regular Expressisons
+    a. Literal Regular Expressions:
+    b. Regular Expression Constructor:
+    c. Anchors:
+    d. Character Classes:
+    e. Quantifiers:
+    f. Metacharacters:
+    g. Character Escapes:
+    h. Flags:
+    i. Lookaheads and Lookbehinds:
+13. web components (Funtional components)
+
