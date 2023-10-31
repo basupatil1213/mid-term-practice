@@ -1,0 +1,42 @@
+Request methods
+    1. PUT :- Used for updating an entire resource on the server.
+    2. PATCH :-  Used for updating a part of the resource on the server.
+    3. OPTIONS :- Used for getting all methods accepted by server.
+Response status codes
+    1. 1xx (Informational): Request received, server is continuing the process.
+    2. 2xx (Success): The request was successfully received, understood, accepted and serviced.
+    3. 3xx (Redirection): Further action must be taken in order to complete the request.
+    4. 4xx (Client Error): The request contains bad syntax or cannot be understood.
+    5. 5xx (Server Error): The server failed to fulfill an apparently valid request.
+Response status code examples: 
+    301: Found & Redirect, but the new location is not temporary.
+    302 Found & Redirect (or Move Temporarily): Same as 301, but the new location is temporarily in nature. Client should
+    update the references.
+    400 Bad Request: Server could not interpret or understand the request, probably syntax error in the request message.
+    401 Authentication Required: The requested resource is protected, and require client’s credential (username/password).
+    403 Forbidden/Unauthorized: Server refuses to supply the resource, regardless of identity of client. In this case, client is not
+    authorized to access the resource.
+    404 Not Found: The requested resource cannot be found in the server.
+    500 Internal Server Error: Caused by an error in the server-side program responding to the request.
+    501 Method Not Implemented: The request method used is invalid (method name is case sensitive so even misspelling
+    could cause this.).
+MIME (Multipurpose Internet Mail Extensions)
+    Media Type (Top-level type): Describes the general category of the data. Common top-level media types include:
+        text: Textual data (e.g., HTML, plain text, XML).
+        image: Image data (e.g., JPEG, PNG, GIF).
+        audio: Audio data (e.g., MP3, WAV).
+        video: Video data (e.g., MP4, AVI).
+        application: Arbitrary binary data (e.g., PDF, JSON, ZIP).
+        multipart: Used for grouping multiple parts within a message (e.g., in email).
+        message: Used for email messages.
+
+    Subtype: Describes the specific format or variant of the media type. For example:
+        text/html: HTML document.
+        image/jpeg: JPEG image.
+        audio/mpeg: MP3 audio.
+        application/json: JSON data.
+        multipart/form-data: Form data used in web forms.
+        message/rfc822: An email message.
+Request body
+
+Response body

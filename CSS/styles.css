@@ -72,6 +72,11 @@ a{
     
 }
 
+.highlight-btn:hover{
+    background: linear-gradient(90deg, #fff,#f9c2c2,#e36868,#e34141);
+    /* animation: effect 3s linear; */
+}
+
 .highlight--body-btn{
     background-color: #fff;
     width: 12em;
@@ -189,3 +194,10 @@ a{
     background-clip: text;
     -webkit-background-clip: text;
 }
+
+@media screen and (max-width: 600px) {
+    .header, .header__nav-section__nav, .header__buttons-section, .main{
+        flex-direction: column;
+        justify-content: center;
+    }
+  }

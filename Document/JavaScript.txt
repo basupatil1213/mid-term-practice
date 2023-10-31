@@ -1,0 +1,246 @@
+1. Ways to export JS functions/classes?
+Default export
+named export
+
+2. Module in Javascript?
+
+common js modules
+---------------------------
+const func1 = () -> {}
+const func2 = () -> {}
+
+module.exports = {func1, func2}
+
+
+main.js file 
+
+const {func1, func2} = require("file path .js extension is not mandatory")
+
+--------------------------
+
+ES6 modules
+
+!!! important
+    We need to add file type as module in package.json to be able to use ES6 modules
+export const func1 = () -> {}
+export const func2 = () -> {}
+
+const func3 = () -> {}
+export Default func3
+
+main.js
+
+import func3, {funct1,func2) from 'file path.js extension is required';
+
+!!! default can be called directly no need to destructure it.
+
+
+--------------------
+
+3. defer in script tag?
+    when we attach defer to script tag the script will execute only after the DOM elements are read, it will be downloaded in parallel with the DOM reading but will execute only after that
+    <script src="file path" defer></script>
+    !!! it works only for external scripts, it doesn't work for in page script
+
+4. DOM methods
+    a. closet :- 
+        -> The closest method in JavaScript is used to find the closest ancestor element in the DOM tree that matches a specified selector.
+
+
+        HTML
+        <div class="grandparent">
+            <div class="parent">
+                <div class="child">
+                    <button id="find-parent">Find Parent</button>
+                </div>
+            </div>
+        </div>
+
+        JS
+
+        // Get a reference to the button element
+        const findParentButton = document.getElementById("find-parent");
+
+        // Add a click event listener to the button
+        findParentButton.addEventListener("click", function() {
+            // Find the closest parent element with the class "parent"
+            const closestParent = findParentButton.closest(".parent");
+
+            if (closestParent) {
+                // If a matching ancestor is found, do something with it
+                closestParent.style.backgroundColor = "lightblue";
+            } else {
+                // If no matching ancestor is found, provide feedback
+                alert("No parent element with class 'parent' found.");
+            }
+        });
+    
+    b. append and appendChild
+        -> appendChild will help us to append one child at a time to the parent element.
+        -> append method helps us to append multiple childs and other things liek text to append at a time.
+
+    c. insertAdjecentHTML
+        -> used to insert html into dom node like before start of it after start of it or before end or after end
+            domelement.insertAdjecentHTML({beforeStart, afterStart, beforeEnd, afterEnd}, "HTML text inside it take tags into consideration")
+    
+    d. matches
+        -> the matches method is used to check if an element matches a specified CSS selector.
+
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>matches Example</title>
+            </head>
+            <body>
+                <div class="selected">This div has the 'selected' class.</div>
+                <div>This div does not have the 'selected' class.</div>
+                
+                <script>
+                    // Get references to the div elements
+                    const div1 = document.querySelector(".selected");
+                    const div2 = document.querySelector("div:not(.selected)");
+
+                    // Check if the first div matches a selector
+                    if (div1.matches(".selected")) {
+                        console.log("div1 matches the selector.");
+                    } else {
+                        console.log("div1 does not match the selector.");
+                    }
+
+                    // Check if the second div matches a selector
+                    if (div2.matches(".selected")) {
+                        console.log("div2 matches the selector.");
+                    } else {
+                        console.log("div2 does not match the selector.");
+                    }
+                </script>
+            </body>
+        </html>
+    
+    e. replaceWith
+        -> we can use it to replace DOM element with new html elements or text
+
+5. Prototype
+    When it comes to inheritance, JavaScript only has one construct: objects.
+    Each object has a private property which holds a link to another object called
+    its prototype. That prototype object has a prototype of its own, and so on
+    until an object is reached with null as its prototype. By definition, null has no
+    prototype, and acts as the final link in this prototype chain.
+
+6. DOM Datatypes
+    a. document
+    b. element
+    c. nodeList
+    d. attribute
+    e. HTMLCollection
+
+7. XHRequest
+    a. open
+        -> xhr.open(method, url, async(default true)); 
+            -> method
+                GET:
+                The GET method is used to request data from the server. It is a safe and idempotent method, meaning it should not have any side effects on the server, and multiple identical requests should produce the same result.
+
+                POST:
+
+                The POST method is used to send data to the server to create a new resource or perform some other action on the server. It is not idempotent, meaning multiple identical requests may have different effects.
+
+                PUT:
+
+                The PUT method is used to update an existing resource or create a new resource if it does not exist. It should be idempotent, meaning multiple identical requests should produce the same result.
+
+                DELETE:
+
+                The DELETE method is used to request the removal of a resource on the server. Like GET, it should be safe and idempotent.
+
+                HEAD:
+
+                The HEAD method is similar to GET, but it only requests the headers of the response without the response body. It is often used to check the availability and status of a resource.
+
+                PATCH:
+
+                The PATCH method is used to apply partial modifications to a resource. It is often used for updating parts of a resource rather than the entire resource.
+
+                OPTIONS:
+
+                The OPTIONS method is used to request information about the communication options available for the target resource. It is often used to check the server's capabilities and allowed methods.
+
+                CONNECT:
+
+                The CONNECT method is used to establish a network connection to a resource, typically for use with a proxy.
+
+                TRACE:
+
+                The TRACE method is used to retrieve a diagnostic trace of the request and response messages for testing and debugging purposes.
+            -> url 
+                -> url of the server or the place from which we are requesting data
+            -> async
+                -> boolean value either to have request synchronously(false) or asynchronously (true)
+    b. list of attributes/properties of the XMLHttpRequest object
+        1. onreadystatechange
+        2. readyState
+        3. status
+        4. statusText
+        5. response
+        6. responseText
+        7. responseXML
+    c. xhr.send( {body for curd operation})
+
+8. Promise
+    Promises in JavaScript are a programming pattern and an object that represents the eventual completion or failure of an asynchronous operation. 
+    const p = new Promise( (resolve,reject) => { our logic goes here} );
+    Promise.all([array of all promises]) -> retruns array of results
+    Promise.race([array of all promises]) -> returns result of first executed promise
+9. asynch and await
+    Async/await is a syntactic sugar on top of Promises, making asynchronous code more readable and easier to write.
+    async function fetchData() {
+        try {
+            const response = await fetch('https://api.example.com/data');
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error; // You can rethrow the error if needed
+        }
+    }
+
+Promise to async await
+
+Promise
+    function getUserData(userId) {
+        return fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(userData => {
+                console.log(`User ID: ${userData.id}, Name: ${userData.name}`);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    getUserData(1);
+
+Equivalent async await
+    async function getUserData(userId) {
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const userData = await response.json();
+            console.log(`User ID: ${userData.id}, Name: ${userData.name}`);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    getUserData(1);
+
+
+
+10. callback functions

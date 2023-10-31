@@ -42,9 +42,29 @@ Lecture 7: Promise, RegExp, & Web Components
     i BEM convetion
 6. SCSS
     a. variables
+        we can store values which can be called multiple times ($variable-name: value;)
     b. mixins
+        predefined bllock of code which can be reused by calling them wherever needed
+        declaration
+        @mixin mixin-name{ code block ...}
+        Invoking
+        @include mixin-name
     c. loops
+
     d. extends (inheritance)
+        Sass allows you to nest selectors within one another, which reflects the HTML structure and makes your code more readable and structured.
+        ex:
+            css
+                .home
+                .home__nav
+
+            sass
+                .home{
+                    related styling
+                    &__nav{
+                        related styling
+                        }
+                    }
     e. nested css
     f. Interpolation
     g. rules -> https://sass-lang.com/documentation/at-rules/
