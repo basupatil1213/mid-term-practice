@@ -182,8 +182,9 @@ a{
 
 .header__nav-section__nav__link:hover{
     color: transparent;
+    background-color: aquamarine;
     /* animation: effect 0.3s linear; */
-    background: linear-gradient(
+    background: linear-gradient(45deg,
         #ec0404, #c079c7);
     background-clip: text;
     -webkit-background-clip: text;

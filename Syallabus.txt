@@ -75,4 +75,5 @@ Lecture 7: Promise, RegExp, & Web Components
     h. Flags:
     i. Lookaheads and Lookbehinds:
 13. web components (Funtional components)
+14. Prototype
 
