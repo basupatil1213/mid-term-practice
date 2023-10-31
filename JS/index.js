@@ -18,10 +18,12 @@ const xhrRequest = (method,url, data) =>{
         xhr.open(method,url);
         xhr.responseType = "json";
         xhr.onload = () => {
-            resolve(xhr.response);
+            xhr.status >=400 ? reject(xhr.response) :
+                               resolve(xhr.response);
         }
         xhr.onerror = () =>{
             console.log(`error occured ${xhr.HEADERS_RECEIVED}`)
+            reject(`something went wrong`);
         }
         if(data){
             xhr.setRequestHeader("content-type","application/json");
@@ -42,8 +44,8 @@ const getData = xhrRequest("GET", "https://fakestoreapi.com/products?limit=5")
                     });
                 });
 const postData = xhrRequest("POST","https://fakestoreapi.com/auth/login", {
-                                    username: "mor_2314",
-                                    password: "83r5^_"
+                                    username: "mor_2314"
+                                    // password: "83r5^_"
                                 })
                                 .then(rd =>{
                                     console.log(JSON.stringify(rd));
